@@ -16,7 +16,7 @@ import matplotlib.pyplot as plt
 def load_data():
     try:
         cust = pd.read_csv("https://github.com/musabsaleem60/Fraud-Email-Detection/blob/main/cust.csv")
-        trans = pd.read_csv("https://raw.githubusercontent.com/sadiqamin324/project/main/trans.csv")
+        trans = pd.read_csv("https://github.com/musabsaleem60/Fraud-Email-Detection/blob/main/trans.csv")
         
         merged_df = pd.merge(cust, trans, on='customerEmail', how='inner')
         merged_df = merged_df.drop(columns=['Unnamed: 0_x', 'Unnamed: 0_y'])
