@@ -1,4 +1,3 @@
-
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -10,14 +9,14 @@ from sklearn.impute import SimpleImputer
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-#st.set_option('deprecation.showPyplotGlobalUse', False)
+st.set_option('deprecation.showPyplotGlobalUse', False)
 
 # Load Data
 @st.cache_data
 def load_data():
     try:
-        cust = pd.read_csv("https://github.com/musabsaleem60/Fraud-Email-Detection/blob/main/cust.csv")
-        trans = pd.read_csv("https://github.com/musabsaleem60/Fraud-Email-Detection/blob/main/trans.csv")
+        cust = pd.read_csv("https://raw.githubusercontent.com/sadiqamin324/project/main/cust.csv")
+        trans = pd.read_csv("https://raw.githubusercontent.com/sadiqamin324/project/main/trans.csv")
         
         merged_df = pd.merge(cust, trans, on='customerEmail', how='inner')
         merged_df = merged_df.drop(columns=['Unnamed: 0_x', 'Unnamed: 0_y'])
